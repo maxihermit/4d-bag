@@ -95,7 +95,7 @@ mkdir -p .cursor/rules && curl -o .cursor/rules/oss.mdc https://raw.githubuserco
 | SR | 值得試 |
 | R | 有潛力，先記著 |
 | N | 有疑慮 |
-| 廢鐵 | 不安全 |
+| 廢鐵 | 不安全，狗都不用 |
 
 ## 隱私
 
@@ -166,7 +166,7 @@ mkdir -p .cursor/rules && curl -o .cursor/rules/oss.mdc https://raw.githubuserco
 | SR | Likely helps. Worth evaluating. |
 | R | Potential. Bookmark it. |
 | N | Concerns found. |
-| Junk | Unsafe. |
+| Junk | Unsafe. Not even my dog would use it. |
 
 ### Privacy
 
