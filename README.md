@@ -90,7 +90,7 @@ curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit
 
 ```
 ## 你的專案：my-web-app
-技術棧：TypeScript, React, Next.js, Prisma, Tailwind
+技術：TypeScript, React, Next.js, Prisma, Tailwind
 痛點：auth 自己寫的很脆弱，沒有測試
 
 ### vercel/ai — 做 AI 功能的 SDK
