@@ -1,5 +1,7 @@
 # gilgamesh — Gate of Open Source（王之開源）
 
+![Gate of Open Source](assets/banner.png)
+
 [English](#the-gate) | [繁體中文](#繁體中文)
 
 > *"You dare develop without consulting the treasury? All the world's open-source treasures belong to me."*
