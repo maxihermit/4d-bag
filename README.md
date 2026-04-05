@@ -8,7 +8,7 @@
 
 ## 繁體中文
 
-> *「你竟敢在沒有查閱寶庫的情況下開發？」*
+> *「別再重新發明輪子，讓本王替你海巡 GitHub！」*
 
 輸入 `/oss`，替你的專案在 GitHub 物色合適的開源代碼。
 
@@ -106,7 +106,7 @@ mkdir -p .cursor/rules && curl -o .cursor/rules/oss.mdc https://raw.githubuserco
 
 ## English
 
-> *"You dare develop without consulting the treasury?"*
+> *"Stop reinventing the wheel. Let the king patrol GitHub for you."*
 
 Type `/oss` to find useful open-source code for your project on GitHub.
 
