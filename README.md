@@ -1,4 +1,6 @@
-# 4d-bag
+# 4d-bag (四次元百宝袋)
+
+[English](#what-it-does) | [中文](#中文说明)
 
 An AI skill that finds trending open-source projects and tells you which ones are worth using in your projects — with security checks. Works with Claude Code, Codex, Cursor, Copilot, or any AI assistant.
 
@@ -94,6 +96,44 @@ With it: 5,000/hour (needed for daily scans).
 ```bash
 export GITHUB_TOKEN=ghp_...
 ```
+
+---
+
+## 中文说明
+
+一个 AI Skill，自动帮你找最近热门的开源项目，对比你正在开发的所有项目，告诉你哪些值得用、哪些有安全问题。
+
+**只看不装，不读你的源码。**
+
+### 安装
+
+```bash
+# Claude Code
+curl -o ~/.claude/commands/4d-bag.md https://raw.githubusercontent.com/maxihermit/4d-bag/main/4d-bag.md
+
+# 其他平台（Codex / Cursor / Copilot）
+# 把 4d-bag.md 的内容复制到对应的配置文件里
+```
+
+### 使用
+
+```
+/4d-bag                          # 扫描当前项目
+/4d-bag all                      # 扫描所有项目
+/4d-bag audit owner/repo         # 安全审计指定 repo
+/4d-bag typescript               # 只看特定语言
+/4d-bag 简报工具                   # 搜特定主题
+```
+
+### 它会做什么
+
+1. 读你的 package.json 等清单文件（不读源码、不读 .env）
+2. 搜 GitHub + Hacker News 热门项目
+3. 评估跟你项目的相关性
+4. 检查 license、已知漏洞、维护状态
+5. 给出推荐：ADOPT / TRIAL / ASSESS / HOLD / AVOID
+
+可以搭配定时任务每天自动跑。
 
 ## License
 
