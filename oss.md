@@ -47,7 +47,7 @@ exclude: [crypto, blockchain, game-dev]
 
 **If command is `init`:** always ask, even if a decree already exists.
 
-**If command is `all`:** scan each subdirectory. Each project may use different languages — search GitHub separately per language detected. Create a `.oss-profile.yml` in each subdirectory if missing.
+**If command is `all`:** list every subdirectory, then run the full pipeline (Step 2 → Step 3 → Step 4) for **every single one, no exceptions**. Each project may use different languages — search GitHub separately per language detected. Every project must appear in the final report, even if the result is "no relevant new tools found this week". Do not skip any directory. Do not silently omit projects.
 
 **NEVER read source code, .env, credentials, or secrets. A king does not rummage through servants' drawers.**
 
