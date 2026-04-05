@@ -43,16 +43,27 @@ gilgamesh 幫你去看
 curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
 ```
 
-### Codex / Cursor / Copilot / 其他
+### OpenAI Codex
 
-把 `gilgamesh.md` 的內容複製到你用的平台的設定檔裡：
+```bash
+mkdir -p .codex/skills/gilgamesh
+curl -o .codex/skills/gilgamesh/SKILL.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+```
 
-| 平台 | 貼到哪裡 |
-|------|---------|
-| Codex | `AGENTS.md` |
-| Cursor | `.cursorrules` |
-| Copilot | `.github/copilot-instructions.md` |
-| 其他 | 直接貼到對話裡 |
+### Cursor
+
+```bash
+mkdir -p .cursor/rules
+curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+```
+
+### GitHub Copilot
+
+把 `gilgamesh.md` 的內容**追加**到 `.github/copilot-instructions.md` 的最後面（不要覆蓋原本的內容）。
+
+### 其他平台
+
+直接把 `gilgamesh.md` 的內容貼到對話裡。
 
 ## 怎麼用
 
@@ -128,7 +139,13 @@ An AI skill that searches GitHub and Hacker News for trending open-source projec
 curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
 ```
 
-**Other platforms:** Copy `gilgamesh.md` contents into `AGENTS.md` (Codex), `.cursorrules` (Cursor), or `.github/copilot-instructions.md` (Copilot).
+**Codex:** `mkdir -p .codex/skills/gilgamesh && curl -o .codex/skills/gilgamesh/SKILL.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md`
+
+**Cursor:** `mkdir -p .cursor/rules && curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md`
+
+**Copilot:** Append the contents of `gilgamesh.md` to your existing `.github/copilot-instructions.md`.
+
+**Others:** Paste the contents of `gilgamesh.md` into your conversation.
 
 ### Usage
 
