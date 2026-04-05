@@ -1,4 +1,4 @@
-# gilgamesh — 王之開源（Gate of Open Source）
+# 王之開源（Gate of Open Source）
 
 ![Gate of Open Source](assets/banner.png)
 
@@ -8,7 +8,7 @@
 
 ## 這是什麼
 
-一個 AI Skill。裝好之後，你只要打 `/gilgamesh`，它就會自動去 GitHub 和 Hacker News 找最近熱門的開源專案，跟你說哪些對你正在開發的東西有用，然後幫你檢查那些專案安不安全。
+一個 AI Skill。裝好之後，你只要打 `/oss`，它就會自動去 GitHub 和 Hacker News 找最近熱門的開源專案，跟你說哪些對你正在開發的東西有用，然後幫你檢查那些專案安不安全。
 
 **它只會給你報告，不會幫你安裝任何東西。**
 
@@ -20,7 +20,7 @@
 每天 GitHub 上都有新的開源工具出現
 你不可能每天自己去看
       ↓
-gilgamesh 幫你去看
+/oss 幫你去看
       ↓
 比對你的專案用了什麼技術、缺了什麼
       ↓
@@ -44,40 +44,40 @@ gilgamesh 幫你去看
 ### Claude Code
 
 ```bash
-curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+curl -o ~/.claude/commands/oss.md https://raw.githubusercontent.com/maxihermit/oss/main/oss.md
 ```
 
 ### OpenAI Codex
 
 ```bash
-mkdir -p .codex/skills/gilgamesh
-curl -o .codex/skills/gilgamesh/SKILL.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+mkdir -p .codex/skills/oss
+curl -o .codex/skills/oss/SKILL.md https://raw.githubusercontent.com/maxihermit/oss/main/oss.md
 ```
 
 ### Cursor
 
 ```bash
 mkdir -p .cursor/rules
-curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+curl -o .cursor/rules/oss.mdc https://raw.githubusercontent.com/maxihermit/oss/main/oss.md
 ```
 
 ### GitHub Copilot
 
-把 `gilgamesh.md` 的內容**追加**到 `.github/copilot-instructions.md` 的最後面（不要覆蓋原本的內容）。
+把 `oss.md` 的內容**追加**到 `.github/copilot-instructions.md` 的最後面（不要覆蓋原本的內容）。
 
 ### 其他平台
 
-直接把 `gilgamesh.md` 的內容貼到對話裡。
+直接把 `oss.md` 的內容貼到對話裡。
 
 ## 怎麼用
 
 ```
-/gilgamesh init                     # 第一次用：告訴它你的專案在做什麼
-/gilgamesh                          # 幫你找有用的新工具
-/gilgamesh all                      # 一次掃描你所有的專案
-/gilgamesh audit owner/repo         # 檢查某個 repo 安不安全
-/gilgamesh typescript               # 只看特定語言的
-/gilgamesh 簡報工具                   # 搜特定主題
+/oss init                     # 第一次用：告訴它你的專案在做什麼
+/oss                          # 幫你找有用的新工具
+/oss all                      # 一次掃描你所有的專案
+/oss audit owner/repo         # 檢查某個 repo 安不安全
+/oss typescript               # 只看特定語言的
+/oss 簡報工具                   # 搜特定主題
 ```
 
 ### 每天自動跑
@@ -85,7 +85,7 @@ curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit
 在 Claude Code 裡說：
 
 ```
-幫我建一個排程任務，每天早上跑 /gilgamesh all
+幫我建一個排程任務，每天早上跑 /oss all
 ```
 
 每天早上自動收到報告。
@@ -116,7 +116,7 @@ SR
 - **不讀** .env、密碼、金鑰
 - **不安裝**任何東西，只給你報告
 - **不會把你的程式碼傳到外面**
-- 規則全寫在 `gilgamesh.md` 裡，100 行，你可以自己看完每一行
+- 規則全寫在 `oss.md` 裡，100 行，你可以自己看完每一行
 
 ## GITHUB_TOKEN（選用）
 
@@ -144,7 +144,7 @@ You're building a project
 New open-source tools appear on GitHub every day
 You can't check them all manually
       ↓
-gilgamesh searches for you
+/oss searches for you
       ↓
 Compares against your project's tech stack and needs
       ↓
@@ -168,40 +168,40 @@ Gives you a verdict: SSR / SR / R / N / Junk
 #### Claude Code
 
 ```bash
-curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+curl -o ~/.claude/commands/oss.md https://raw.githubusercontent.com/maxihermit/oss/main/oss.md
 ```
 
 #### OpenAI Codex
 
 ```bash
-mkdir -p .codex/skills/gilgamesh
-curl -o .codex/skills/gilgamesh/SKILL.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+mkdir -p .codex/skills/oss
+curl -o .codex/skills/oss/SKILL.md https://raw.githubusercontent.com/maxihermit/oss/main/oss.md
 ```
 
 #### Cursor
 
 ```bash
 mkdir -p .cursor/rules
-curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+curl -o .cursor/rules/oss.mdc https://raw.githubusercontent.com/maxihermit/oss/main/oss.md
 ```
 
 #### GitHub Copilot
 
-Append the contents of `gilgamesh.md` to your existing `.github/copilot-instructions.md`.
+Append the contents of `oss.md` to your existing `.github/copilot-instructions.md`.
 
 #### Others
 
-Paste the contents of `gilgamesh.md` into your conversation.
+Paste the contents of `oss.md` into your conversation.
 
 ### Usage
 
 ```
-/gilgamesh init                     # First time: describe your project
-/gilgamesh                          # Find useful new tools
-/gilgamesh all                      # Scan all your projects at once
-/gilgamesh audit owner/repo         # Security check a specific repo
-/gilgamesh typescript               # Filter by language
-/gilgamesh presentation tools       # Search specific topic
+/oss init                     # First time: describe your project
+/oss                          # Find useful new tools
+/oss all                      # Scan all your projects at once
+/oss audit owner/repo         # Security check a specific repo
+/oss typescript               # Filter by language
+/oss presentation tools       # Search specific topic
 ```
 
 ### Daily auto-scan
@@ -209,7 +209,7 @@ Paste the contents of `gilgamesh.md` into your conversation.
 In Claude Code, say:
 
 ```
-Help me create a scheduled task that runs /gilgamesh all every morning
+Help me create a scheduled task that runs /oss all every morning
 ```
 
 ### Example output
@@ -240,7 +240,7 @@ Security: MIT, no vulnerabilities, very active.
 - Never reads .env, passwords, API keys
 - Never installs anything
 - Never sends your code anywhere
-- Full prompt is in `gilgamesh.md` — 100 lines, read it yourself
+- Full prompt is in `oss.md` — 100 lines, read it yourself
 
 ### GITHUB_TOKEN (optional)
 

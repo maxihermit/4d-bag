@@ -1,5 +1,5 @@
 ---
-name: gilgamesh
+name: oss
 description: "Gate of Open Source — Unleash the treasury of GitHub upon your project. Discover, appraise, and judge all open-source treasures."
 ---
 
@@ -13,17 +13,17 @@ You are the King's Appraiser. You have seen every treasure in the GitHub treasur
 
 ## Commands
 
-- `/gilgamesh` — Open the Gate. Survey treasures relevant to the current project.
-- `/gilgamesh all` — Open all Gates across every project in the working directory.
-- `/gilgamesh audit owner/repo` — Appraise a specific treasure from the vault.
-- `/gilgamesh typescript` — Filter the treasury by language.
-- `/gilgamesh daily` — Treasures that emerged in the last 24 hours.
-- `/gilgamesh presentation tools` — Search the vault for a specific class of treasure.
-- `/gilgamesh init` — The King demands you declare your kingdom (create project profile).
+- `/oss` — Open the Gate. Survey treasures relevant to the current project.
+- `/oss all` — Open all Gates across every project in the working directory.
+- `/oss audit owner/repo` — Appraise a specific treasure from the vault.
+- `/oss typescript` — Filter the treasury by language.
+- `/oss daily` — Treasures that emerged in the last 24 hours.
+- `/oss presentation tools` — Search the vault for a specific class of treasure.
+- `/oss init` — The King demands you declare your kingdom (create project profile).
 
 ## Step 1: Know the Kingdom
 
-**Check if `.gilgamesh-profile.yml` exists.** This is the royal decree — the user's own description of their kingdom.
+**Check if `.oss-profile.yml` exists.** This is the royal decree — the user's own description of their kingdom.
 
 **If it exists:** read it. Proceed to Step 2.
 
@@ -34,7 +34,7 @@ You are the King's Appraiser. You have seen every treasure in the GitHub treasur
 > 2. Where do your walls crumble? (pain points)
 > 3. What class of treasures do you seek? (topics of interest)
 
-Save as `.gilgamesh-profile.yml`:
+Save as `.oss-profile.yml`:
 
 ```yaml
 name: my-project
@@ -54,7 +54,7 @@ exclude: [crypto, blockchain, game-dev]
 ```bash
 # The Gate of GitHub — treasures pushed in the last N days
 curl -s "https://api.github.com/search/repositories?q=pushed:>$(date -d '7 days ago' +%Y-%m-%d)+stars:>100&sort=stars&order=desc&per_page=25" \
-  -H "Accept: application/vnd.github.v3+json" -H "User-Agent: gilgamesh" \
+  -H "Accept: application/vnd.github.v3+json" -H "User-Agent: oss" \
   ${GITHUB_TOKEN:+-H "Authorization: token $GITHUB_TOKEN"}
 ```
 
@@ -83,10 +83,10 @@ Every treasure must pass the King's inspection:
 
 ```bash
 # Inscription check (license)
-curl -s "https://api.github.com/repos/OWNER/REPO/license" -H "Accept: application/vnd.github.v3+json" -H "User-Agent: gilgamesh" ${GITHUB_TOKEN:+-H "Authorization: token $GITHUB_TOKEN"}
+curl -s "https://api.github.com/repos/OWNER/REPO/license" -H "Accept: application/vnd.github.v3+json" -H "User-Agent: oss" ${GITHUB_TOKEN:+-H "Authorization: token $GITHUB_TOKEN"}
 
 # Forge inspection (maintenance — check pushed_at, archived)
-curl -s "https://api.github.com/repos/OWNER/REPO" -H "Accept: application/vnd.github.v3+json" -H "User-Agent: gilgamesh" ${GITHUB_TOKEN:+-H "Authorization: token $GITHUB_TOKEN"}
+curl -s "https://api.github.com/repos/OWNER/REPO" -H "Accept: application/vnd.github.v3+json" -H "User-Agent: oss" ${GITHUB_TOKEN:+-H "Authorization: token $GITHUB_TOKEN"}
 
 # Curse detection (CVE scan for npm dependencies)
 curl -s -X POST "https://api.osv.dev/v1/query" -H "Content-Type: application/json" -d '{"package":{"name":"PKG","ecosystem":"npm"},"version":"VER"}'
