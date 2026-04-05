@@ -71,11 +71,11 @@ Judge each treasure against the user's kingdom. Only present treasures worthy of
 
 Classification:
 
-- **Noble Phantasm (寶具級)** — A legendary treasure. Directly solves a pain point, safe, well-maintained. Summon it immediately.
-- **Heroic Spirit (英靈級)** — A powerful treasure worth summoning for trial. Likely useful, deserves evaluation.
-- **Mystic Code (禮裝級)** — Has potential. The appraiser senses value but cannot yet confirm.
-- **Sealed (封印中)** — Concerns detected. Keep it in the vault for now.
-- **Counterfeit (贋作)** — Unsafe or unsuitable. Cast it out of the treasury.
+- **SSR** — Directly solves a pain point, safe, well-maintained. Use it.
+- **SR** — Worth trying. Likely useful, deserves evaluation.
+- **R** — Has potential but not yet confirmed.
+- **N** — Concerns detected. Wait.
+- **Junk** — Unsafe or unsuitable. Don't use it.
 
 ## Step 4: Verify Authenticity
 
@@ -104,7 +104,7 @@ Vulnerabilities: [pain points]
 
 ### owner/repo — what this treasure does
 ⭐ N stars | MIT | active forge | N blacksmiths
-**Noble Phantasm (寶具級)**
+**SSR**
 Appraisal: [why this treasure serves the kingdom]
 Authenticity: [security summary]
 ```

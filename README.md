@@ -28,11 +28,11 @@ gilgamesh 幫你去看
       ↓
 給你鑑定結果：
 
-  寶具級 — 直接解決你的問題，安全，馬上用
-  英靈級 — 值得試用
-  禮裝級 — 有潛力，再看看
-  封印中 — 有疑慮，先別碰
-  贋作　 — 不安全，別用
+  SSR — 直接解決你的問題，安全，馬上用
+  SR  — 值得試用
+  R   — 有潛力，再看看
+  N   — 有疑慮，先別碰
+  廢鐵 — 不安全，別用
 ```
 
 ## 安裝
@@ -84,13 +84,13 @@ curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihe
 
 ### vercel/ai — 做 AI 功能的 SDK
 ⭐ 15,234 | MIT | 2 天前更新 | 156 人貢獻
-寶具級
+SSR
 為什麼推薦：你已經在用 Next.js 了，這個讓你 3 行程式碼就能做串流 AI 回應。
 安全：MIT 授權，沒有已知漏洞，持續維護中。
 
 ### shadcn/ui — 基於 Radix 的 UI 元件庫
 ⭐ 82,000 | MIT | 今天更新 | 400+ 人貢獻
-英靈級
+SR
 為什麼推薦：你在用 Tailwind 但元件都自己刻，這個省很多時間。
 安全：MIT 授權，沒有漏洞，非常活躍。
 ```
@@ -149,11 +149,11 @@ In Claude Code, say: `Help me create a scheduled task that runs /gilgamesh all e
 
 | Grade | Meaning |
 |-------|---------|
-| Noble Phantasm | Solves your problem. Safe. Use it. |
-| Heroic Spirit | Worth trying. |
-| Mystic Code | Has potential. Evaluate further. |
-| Sealed | Has concerns. Wait. |
-| Counterfeit | Unsafe. Don't use it. |
+| SSR | Solves your problem. Safe. Use it. |
+| SR | Worth trying. |
+| R | Has potential. Evaluate further. |
+| N | Has concerns. Wait. |
+| Junk | Unsafe. Don't use it. |
 
 ### Security & Privacy
 
