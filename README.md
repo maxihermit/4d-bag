@@ -139,8 +139,8 @@ curl -o ~/.claude/commands/4d-bag.md https://raw.githubusercontent.com/maxihermi
 
 ### 它會做什麼
 
-1. 第一次���用時會問你 3 個問題（專案做什麼、痛點、感興趣的主題），存成 `.4dbag-profile.yml`
-2. 之後每次自動讀取��個檔案，不浪費 token
+1. 第一次使用時會問你 3 個問題（專案做什麼、痛點、感興趣的主題），存成 `.4dbag-profile.yml`
+2. 之後每次自動讀取這個檔案，不浪費 token
 3. 搜尋 GitHub + Hacker News 熱門專案
 4. 根據你的痛點和興趣評估相關性
 5. 檢查 license、已知漏洞、維護狀態
