@@ -32,25 +32,45 @@ Read `.oss-profile.yml`. Check for `code_analysis.last_scan_commit`.
 
 ### First scan (no `code_analysis`, or `/oss rescan`, or `/oss init`)
 
-This costs tokens but only runs once. Results are cached for all future runs.
+Results are cached for all future runs. Uses a 3-layer approach to minimize token cost while staying accurate.
 
-1. **Read dependency manifests** (`package.json`, `Cargo.toml`, `pubspec.yaml`, `go.mod`, `requirements.txt`, etc.) — know what's already installed.
+**Layer 1: Dependency manifests (MUST read, cheap, always accurate)**
 
-2. **Analyze actual code** — for each dependency area, read key files to determine:
-   - How is each dependency actually used? Well or poorly?
-   - Are there patterns repeated across files (real duplication)?
-   - Where is code quality already strong? (mark as `strengths` — never recommend replacing these)
-   - Where are genuine gaps or risks?
+Read `package.json`, `Cargo.toml`, `pubspec.yaml`, `go.mod`, `requirements.txt`, etc. These are machine-managed and never stale. This tells you exactly what's installed.
 
-3. **Verify every potential gap** — for each candidate gap, CHECK:
-   - Is this actually causing problems, or is it stable code nobody touches? (`git log --oneline -20 -- <path>`)
-   - Would a library help, or would 30 minutes of internal cleanup solve it?
-   - What's the real migration cost vs. benefit?
-   - Is the "problem" actually an intentional design choice?
+**Layer 2: Documentation (read if exists, treat as HINTS not facts)**
 
-   **If you can't prove the gap with evidence from the code, it's not a gap.**
+Read `README.md`, `CLAUDE.md`, `docs/`, `ARCHITECTURE.md`, etc. These provide intent, design rationale, and pain points the developer already knows about.
 
-4. **Save to `.oss-profile.yml`:**
+⚠️ **MD files go stale.** Treat them as "what the developer intended" not "what the code does." Specifically:
+- Architecture descriptions → might describe target state, not current state
+- Feature lists → might include planned but unimplemented features
+- Dependency descriptions → might reference removed or replaced libraries
+- Performance claims → might be outdated after refactoring
+
+**Layer 3: Code spot-checks (targeted reads, only where Layer 1+2 suggest a gap)**
+
+For each potential gap identified from Layer 1+2, verify by reading the actual code:
+- Read 2-3 key files in the area (not the entire codebase)
+- Check `git log --oneline -10 -- <path>` — is this area actively changing or stable?
+- If MD says "X is a problem" but code shows it's been fixed → trust code, ignore MD
+
+**The verification rule: if Layer 2 (MD) claims something but Layer 1 (manifest) or Layer 3 (code) contradicts it, always trust the code.**
+
+**Staleness detection shortcuts:**
+- `git log --oneline -1 -- docs/` vs `git log --oneline -1` — if docs last touched months ago but code changed yesterday, docs are likely stale
+- If README mentions a dependency not in the manifest → stale
+- If CLAUDE.md describes a file path that doesn't exist → stale
+
+**Layer 3 checklist for each candidate gap:**
+- Is this actually causing problems, or is it stable code nobody touches?
+- Would a library help, or would 30 minutes of internal cleanup solve it?
+- What's the real migration cost vs. benefit?
+- Is the "problem" actually an intentional design choice?
+
+**If you can't prove the gap with evidence from the code, it's not a gap.**
+
+Save to `.oss-profile.yml`:
 
 ```yaml
 name: (from manifest)
@@ -61,6 +81,7 @@ exclude: []
 code_analysis:
   last_scan: "2025-01-15"
   last_scan_commit: "abc1234"
+  docs_freshness: "stale"  # fresh | stale | none — based on git log comparison
 
   strengths:
     - area: "Description"
@@ -82,8 +103,9 @@ code_analysis:
 
 1. `git diff <last_scan_commit>..HEAD --stat`
 2. Small changes, no dependency changes → use cached analysis
-3. Dependency manifests changed → re-scan changed areas only
-4. Major refactoring → full rescan
+3. Dependency manifests changed → re-scan only changed dependency areas (Layer 1 + targeted Layer 3)
+4. MD files changed → re-read them but verify claims against code before updating gaps
+5. Major refactoring (>30 files changed) → full rescan
 
 ### Privacy
 
