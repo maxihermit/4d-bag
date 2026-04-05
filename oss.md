@@ -114,30 +114,49 @@ Classification:
 
 ## Step 4: Present to the King
 
-For each recommendation, include a **Before / After** comparison so the user can instantly see if it's worth switching. Be specific — show actual code, workflow, or architecture differences.
+For each project, first show a summary table of all recommendations, then show details for each one.
+
+**Summary table (per project):**
 
 ```
-## [project name]
-[description]
-Tech: [stack]
-Pain points: [pain points]
+## [project name] — [one line description]
+
+| Repo | Stars | Grade | One-line reason |
+|------|-------|-------|-----------------|
+| owner/repo1 | 12,345 | SSR | Replaces your hand-rolled auth with 20 lines |
+| owner/repo2 | 8,000 | SR | Better Excel export than openpyxl |
+| owner/repo3 | 500 | N | No license |
+```
+
+**Then, details for each recommendation (only SSR and SR need full detail, R and N keep brief):**
+
+```
+---
 
 ### owner/repo — what it does
-⭐ N stars | MIT | N days ago | N contributors
-**SSR**
 
-**Before (current):**
-[What the user is doing now — e.g. hand-rolled auth with 200 lines, or using library X, or doing it manually]
+| Item | Detail |
+|------|--------|
+| Stars | 12,345 |
+| License | MIT ✓ |
+| Last commit | 2 days ago |
+| Contributors | 156 |
+| Grade | **SSR** |
 
-**After (with this tool):**
-[What changes — e.g. 20 lines with built-in session management, or automated with one config file]
+**Before → After**
 
-**Difference:** [one sentence: what specifically gets better — less code, faster, more secure, etc.]
+| | Before (now) | After (with this) |
+|---|---|---|
+| How | [what user does now] | [what changes] |
+| Code | [X lines / manual / library Y] | [N lines / automated / library Z] |
+| Result | [current outcome] | [improved outcome] |
 
-Security: [license status, CVE count if checked, last commit date, contributor count]
+**Bottom line:** [one sentence — is it worth switching and why]
 ```
 
-If you can show a code snippet comparison (before vs after), do it — but keep each snippet under 5 lines. If it's not a code change (e.g. a workflow tool), describe the workflow difference instead.
+For R and N grade, just show the summary table row, no detail section needed.
+
+If you can show a short code snippet (under 5 lines) in the Before/After table, do it. If it's a workflow change, describe the steps instead.
 
 If no results for a project:
 ```

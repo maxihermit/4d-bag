@@ -93,21 +93,34 @@ curl -o .cursor/rules/oss.mdc https://raw.githubusercontent.com/maxihermit/oss/m
 ## 報告長什麼樣子
 
 ```
-## 你的專案：my-web-app
-技術：TypeScript, React, Next.js, Prisma, Tailwind
-痛點：auth 自己寫的很脆弱，沒有測試
+## my-web-app — 電商網站
+
+| Repo | Stars | 等級 | 一句話 |
+|------|-------|------|--------|
+| vercel/ai | 15,234 | SSR | 3 行就能做串流 AI 回應 |
+| shadcn/ui | 82,000 | SR | 不用再自己刻 UI 元件 |
+
+---
 
 ### vercel/ai — 做 AI 功能的 SDK
-⭐ 15,234 | MIT | 2 天前更新 | 156 人貢獻
-SSR
-為什麼推薦：你已經在用 Next.js 了，這個讓你 3 行程式碼就能做串流 AI 回應。
-安全：MIT 授權，沒有已知漏洞，持續維護中。
 
-### shadcn/ui — 基於 Radix 的 UI 元件庫
-⭐ 82,000 | MIT | 今天更新 | 400+ 人貢獻
-SR
-為什麼推薦：你在用 Tailwind 但元件都自己刻，這個省很多時間。
-安全：MIT 授權，沒有漏洞，非常活躍。
+| 項目 | 內容 |
+|------|------|
+| Stars | 15,234 |
+| License | MIT ✓ |
+| 最近更新 | 2 天前 |
+| 貢獻者 | 156 人 |
+| 等級 | **SSR** |
+
+**Before → After**
+
+| | Before | After |
+|---|---|---|
+| 做法 | 自己寫 fetch 串 OpenAI API | 用 AI SDK 內建的 useChat hook |
+| 程式碼 | 80 行，要自己管串流和錯誤處理 | 3 行，自動處理 |
+| 結果 | 串流不穩定，錯誤處理不完整 | 穩定串流，自動重試 |
+
+**結論：** 你已經在用 Next.js，這個直接裝就能用，省 80 行程式碼。
 ```
 
 ## 資安與隱私
@@ -215,23 +228,34 @@ Help me create a scheduled task that runs /oss all every morning
 ### Example output
 
 ```
-## Your Project: my-web-app
-Tech: TypeScript, React, Next.js, Prisma, Tailwind
-Pain points: auth is fragile, no proper testing
+## my-web-app — e-commerce site
+
+| Repo | Stars | Grade | One-liner |
+|------|-------|-------|-----------|
+| vercel/ai | 15,234 | SSR | Streaming AI in 3 lines |
+| shadcn/ui | 82,000 | SR | Stop building UI from scratch |
+
+---
 
 ### vercel/ai — AI SDK for building AI-powered apps
-⭐ 15,234 | MIT | updated 2 days ago | 156 contributors
-SSR
-Why: You're already using Next.js. This gives you streaming AI
-responses with 3 lines of code.
-Security: MIT license, no known vulnerabilities, actively maintained.
 
-### shadcn/ui — UI components built on Radix
-⭐ 82,000 | MIT | updated today | 400+ contributors
-SR
-Why: You're using Tailwind but building components from scratch.
-This saves you hours.
-Security: MIT, no vulnerabilities, very active.
+| Item | Detail |
+|------|--------|
+| Stars | 15,234 |
+| License | MIT |
+| Last commit | 2 days ago |
+| Contributors | 156 |
+| Grade | **SSR** |
+
+Before → After
+
+| | Before | After |
+|---|---|---|
+| How | Manual fetch to OpenAI API | Built-in useChat hook |
+| Code | 80 lines, manual streaming | 3 lines, automatic |
+| Result | Flaky streaming, no retry | Stable, auto-retry |
+
+**Bottom line:** You already use Next.js. Install and save 80 lines.
 ```
 
 ### Security & Privacy
