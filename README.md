@@ -26,14 +26,18 @@ gilgamesh 幫你去看
       ↓
 檢查安全性：授權條款、已知漏洞、有沒有人在維護
       ↓
-給你鑑定結果：
-
-  SSR — 直接解決你的問題，安全，馬上用
-  SR  — 值得試用
-  R   — 有潛力，再看看
-  N   — 有疑慮，先別碰
-  廢鐵 — 不安全，別用
+給你鑑定結果：SSR / SR / R / N / 廢鐵
 ```
+
+### 鑑定等級
+
+| 等級 | 意思 |
+|------|------|
+| SSR | 直接解決你的問題，安全，馬上用 |
+| SR | 值得試用 |
+| R | 有潛力，再看看 |
+| N | 有疑慮，先別碰 |
+| 廢鐵 | 不安全，別用 |
 
 ## 安裝
 
@@ -132,20 +136,62 @@ An AI skill that searches GitHub and Hacker News for trending open-source projec
 
 **It only reports. It never installs anything.**
 
+### How it works
+
+```
+You're building a project
+      ↓
+New open-source tools appear on GitHub every day
+You can't check them all manually
+      ↓
+gilgamesh searches for you
+      ↓
+Compares against your project's tech stack and needs
+      ↓
+Checks security: license, known vulnerabilities, maintenance status
+      ↓
+Gives you a verdict: SSR / SR / R / N / Junk
+```
+
+### Grades
+
+| Grade | Meaning |
+|-------|---------|
+| SSR | Solves your problem. Safe. Use it. |
+| SR | Worth trying. |
+| R | Has potential. Evaluate further. |
+| N | Has concerns. Wait. |
+| Junk | Unsafe. Don't use it. |
+
 ### Install
 
-**Claude Code:**
+#### Claude Code
+
 ```bash
 curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
 ```
 
-**Codex:** `mkdir -p .codex/skills/gilgamesh && curl -o .codex/skills/gilgamesh/SKILL.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md`
+#### OpenAI Codex
 
-**Cursor:** `mkdir -p .cursor/rules && curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md`
+```bash
+mkdir -p .codex/skills/gilgamesh
+curl -o .codex/skills/gilgamesh/SKILL.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+```
 
-**Copilot:** Append the contents of `gilgamesh.md` to your existing `.github/copilot-instructions.md`.
+#### Cursor
 
-**Others:** Paste the contents of `gilgamesh.md` into your conversation.
+```bash
+mkdir -p .cursor/rules
+curl -o .cursor/rules/gilgamesh.mdc https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
+```
+
+#### GitHub Copilot
+
+Append the contents of `gilgamesh.md` to your existing `.github/copilot-instructions.md`.
+
+#### Others
+
+Paste the contents of `gilgamesh.md` into your conversation.
 
 ### Usage
 
@@ -160,17 +206,33 @@ curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihe
 
 ### Daily auto-scan
 
-In Claude Code, say: `Help me create a scheduled task that runs /gilgamesh all every morning`
+In Claude Code, say:
 
-### Appraisal grades
+```
+Help me create a scheduled task that runs /gilgamesh all every morning
+```
 
-| Grade | Meaning |
-|-------|---------|
-| SSR | Solves your problem. Safe. Use it. |
-| SR | Worth trying. |
-| R | Has potential. Evaluate further. |
-| N | Has concerns. Wait. |
-| Junk | Unsafe. Don't use it. |
+### Example output
+
+```
+## Your Project: my-web-app
+Tech: TypeScript, React, Next.js, Prisma, Tailwind
+Pain points: auth is fragile, no proper testing
+
+### vercel/ai — AI SDK for building AI-powered apps
+⭐ 15,234 | MIT | updated 2 days ago | 156 contributors
+SSR
+Why: You're already using Next.js. This gives you streaming AI
+responses with 3 lines of code.
+Security: MIT license, no known vulnerabilities, actively maintained.
+
+### shadcn/ui — UI components built on Radix
+⭐ 82,000 | MIT | updated today | 400+ contributors
+SR
+Why: You're using Tailwind but building components from scratch.
+This saves you hours.
+Security: MIT, no vulnerabilities, very active.
+```
 
 ### Security & Privacy
 
@@ -179,6 +241,15 @@ In Claude Code, say: `Help me create a scheduled task that runs /gilgamesh all e
 - Never installs anything
 - Never sends your code anywhere
 - Full prompt is in `gilgamesh.md` — 100 lines, read it yourself
+
+### GITHUB_TOKEN (optional)
+
+Without it: 60 GitHub API requests per hour.
+With it: 5,000 per hour.
+
+```bash
+export GITHUB_TOKEN=ghp_...
+```
 
 ## License
 
