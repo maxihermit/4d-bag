@@ -1,4 +1,4 @@
-# 4d-bag — Gate of Open Source（王之開源）
+# gilgamesh — Gate of Open Source（王之開源）
 
 [English](#the-gate) | [繁體中文](#繁體中文)
 
@@ -31,22 +31,22 @@ Verdict:  Noble Phantasm / Heroic Spirit / Mystic Code / Sealed / Counterfeit
 ### Claude Code
 
 ```bash
-curl -o ~/.claude/commands/4d-bag.md https://raw.githubusercontent.com/maxihermit/4d-bag/main/4d-bag.md
+curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
 ```
 
 Then:
 ```
-/4d-bag init                     # Declare your kingdom
-/4d-bag                          # Open the Gate
-/4d-bag all                      # Survey all kingdoms
-/4d-bag audit owner/repo         # Appraise a specific treasure
-/4d-bag typescript               # Filter treasury by language
-/4d-bag presentation tools       # Seek a specific class of treasure
+/gilgamesh init                     # Declare your kingdom
+/gilgamesh                          # Open the Gate
+/gilgamesh all                      # Survey all kingdoms
+/gilgamesh audit owner/repo         # Appraise a specific treasure
+/gilgamesh typescript               # Filter treasury by language
+/gilgamesh presentation tools       # Seek a specific class of treasure
 ```
 
 ### OpenAI Codex / Cursor / Copilot / Others
 
-Copy the contents of `4d-bag.md` into your platform's instruction file:
+Copy the contents of `gilgamesh.md` into your platform's instruction file:
 
 | Platform | Copy to |
 |----------|---------|
@@ -60,7 +60,7 @@ Copy the contents of `4d-bag.md` into your platform's instruction file:
 In Claude Code:
 
 ```
-Help me create a scheduled task that runs /4d-bag all every morning
+Help me create a scheduled task that runs /gilgamesh all every morning
 ```
 
 The Gate opens at dawn. You receive a report of new treasures.
@@ -106,7 +106,7 @@ The King's Appraiser follows strict protocol:
 - **Never reads** .env, credentials, API keys, or secret scrolls
 - **Never deploys** anything — only appraises
 - **Never sends** your kingdom's code to external realms — only queries the public gates (GitHub / HN / OSV)
-- Full appraisal protocol is in `4d-bag.md` — 100 lines, inspect it yourself
+- Full appraisal protocol is in `gilgamesh.md` — 100 lines, inspect it yourself
 
 ## Optional: GITHUB_TOKEN
 
@@ -130,18 +130,18 @@ export GITHUB_TOKEN=ghp_...
 ### 安裝
 
 ```bash
-curl -o ~/.claude/commands/4d-bag.md https://raw.githubusercontent.com/maxihermit/4d-bag/main/4d-bag.md
+curl -o ~/.claude/commands/gilgamesh.md https://raw.githubusercontent.com/maxihermit/gilgamesh/main/gilgamesh.md
 ```
 
 ### 使用方式
 
 ```
-/4d-bag init                     # 宣告你的王國
-/4d-bag                          # 打開寶庫之門
-/4d-bag all                      # 巡視所有王國
-/4d-bag audit owner/repo         # 鑑定特定寶物
-/4d-bag typescript               # 依語言篩選寶庫
-/4d-bag 簡報工具                   # 搜尋特定類型的寶物
+/gilgamesh init                     # 宣告你的王國
+/gilgamesh                          # 打開寶庫之門
+/gilgamesh all                      # 巡視所有王國
+/gilgamesh audit owner/repo         # 鑑定特定寶物
+/gilgamesh typescript               # 依語言篩選寶庫
+/gilgamesh 簡報工具                   # 搜尋特定類型的寶物
 ```
 
 ### 鑑定等級
@@ -159,7 +159,7 @@ curl -o ~/.claude/commands/4d-bag.md https://raw.githubusercontent.com/maxihermi
 在 Claude Code 裡直接說：
 
 ```
-幫我建一個排程任務，每天早上跑 /4d-bag all
+幫我建一個排程任務，每天早上跑 /gilgamesh all
 ```
 
 每天黎明開門，自動收到新寶物鑑定報告。
@@ -170,7 +170,7 @@ curl -o ~/.claude/commands/4d-bag.md https://raw.githubusercontent.com/maxihermi
 - **不讀** .env、密碼、金鑰等機敏檔案
 - **不安裝**任何東西，只產生鑑定報告
 - **不會把你的程式碼傳到外部**
-- 完整鑑定規則就在 `4d-bag.md` 裡，100 行，你可以自己審查
+- 完整鑑定規則就在 `gilgamesh.md` 裡，100 行，你可以自己審查
 
 ## License
 
